@@ -1,17 +1,28 @@
 import React from 'react';
-import { VStack, useColorMode, Flex, Text } from '@chakra-ui/react';
+import {
+  VStack,
+  useColorMode,
+  Flex,
+  Text,
+  Divider,
+  Menu,
+  MenuList,
+  MenuButton,
+  Button
+} from '@chakra-ui/react';
 import { FiHome } from "react-icons/fi";
-import { IoTrailSignOutline } from "react-icons/io5";
+import { IoTrailSignOutline, IoTimeOutline, IoFilmOutline, IoSyncOutline, IoHeartSharp } from "react-icons/io5";
 
 import { NextChakraLink } from '../NextChakraLink';
+import { SubscriptionIcon, GamingIcon, LibraryIcon } from '../svgs';
 
-type MenuItemProps = {
+type SidebarItemProps = {
   children: React.ReactNode,
   icon?: any,
   isActive?: boolean
 }
 
-function MenuItem({ children, icon, isActive }: MenuItemProps) {
+function SidebarItem({ children, icon, isActive }: SidebarItemProps) {
   const { colorMode } = useColorMode();
   const bg = colorMode === 'light' ? 'gray.200' : 'gray.700';
 
@@ -43,8 +54,20 @@ export const Menubar = (): JSX.Element => {
       borderRight={'1px'}
       borderRightColor={colorMode === 'light' ? 'gray.200' : 'gray.700'}
     >
-      <MenuItem icon={<FiHome size={22} />} isActive={true}>Home</MenuItem>
-      <MenuItem icon={<IoTrailSignOutline size={22} />}>Explore</MenuItem>
+      <SidebarItem icon={<FiHome size={22} />} isActive={true}>Home</SidebarItem>
+      <SidebarItem icon={<IoTrailSignOutline size={22} />}>Explore</SidebarItem>
+      <SidebarItem icon={<SubscriptionIcon width={25} />}>Subscription</SidebarItem>
+      <Divider />
+      <SidebarItem icon={<LibraryIcon width={25} />}>Library</SidebarItem>
+      <SidebarItem icon={<IoTimeOutline size={22} />}>History</SidebarItem>
+      <SidebarItem icon={<IoFilmOutline size={22} />}>Your videos</SidebarItem>
+      <SidebarItem icon={<IoSyncOutline size={22} />}>Watch later</SidebarItem>
+      <SidebarItem icon={<IoHeartSharp size={22} />}>Like videos</SidebarItem>
+      <Menu>
+        <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
+          Actions
+        </MenuButton>
+      </Menu>
     </VStack>
   )
 }
