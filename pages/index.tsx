@@ -15,6 +15,18 @@ export default function Home() {
       <Flex>
         <Sidebar isMinimized={false} />
       </Flex>
+      <style jsx global>{`
+        ::-webkit-scrollbar {
+          width: 7px;
+        }
+        ::-webkit-scrollbar-track {
+          -webkit-box-shadow: inset 1000px 1000px 20000px #0a0a0a;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+          -webkit-box-shadow: inset 10px 10px 60px #4e4c4e;
+        }
+      `}</style>
     </>
   )
 }
