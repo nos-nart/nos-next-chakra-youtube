@@ -6,7 +6,7 @@ export const Search = (): JSX.Element => {
   return (
     <Flex
       alignItems={'center'}
-      display={{ base: "none", md: "block" }}
+      display={{ base: "none", md: "flex" }}
       w={{ base: "0em", sm: "5em", md: "15em", lg: "30em", xl: "35em" }}
     >
       <InputGroup size={'sm'}>
