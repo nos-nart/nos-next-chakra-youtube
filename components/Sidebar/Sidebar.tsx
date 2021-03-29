@@ -8,7 +8,12 @@ type SidebarProps = {
 
 export const Sidebar = ({ isMinimized }: SidebarProps): JSX.Element => {
   return (
-    <Box style={{ height: 'calc(100vh - 3.5rem)'}}>
+    <Box style={{ height: 'calc(100vh - 3.5rem)'}}
+      display={{ base: "none", xl: "block" }}
+      position={'fixed'}
+      left={0}
+      top={'14'}
+    >
       {isMinimized ? <MenubarSmall /> : <Menubar /> }
     </Box>
   )
