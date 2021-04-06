@@ -85,7 +85,7 @@ export const Menubar = (): JSX.Element => {
     <VStack
       className="menubar"
       h={'full'}
-      w={{ base: 'full', md: '275px' }}
+      w={{ base: 'full', xl: '275px' }}
       borderRight={'1px'}
       borderRightColor={colorMode === 'light' ? 'gray.200' : 'gray.700'}
       overflowY={'scroll'}
